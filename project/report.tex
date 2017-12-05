@@ -1,0 +1,137 @@
+\documentclass[sigconf]{acmart}
+
+\usepackage{hyperref}
+
+\usepackage{endfloat}
+\renewcommand{\efloatseparator}{\mbox{}} % no new page between figures
+
+\usepackage{booktabs} % For formal tables
+
+\settopmatter{printacmref=false} % Removes citation information below abstract
+\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
+\pagestyle{plain} % removes running headers
+
+\begin{document}
+\title{Big Data in Job Recommendation Systems}
+
+
+\author{Huiyi Chen, Yuanming Huang}
+\orcid{hid101, hid230}
+\affiliation{%
+  \institution{Indiana University}
+  \date{December 2017}
+}
+\email{huiychen@indiana.edu, huang226@indiana.edu}
+
+
+
+% The default list of authors is too long for headers}
+\renewcommand{\shortauthors}{H. CHEN, Y. Huang}
+
+
+\begin{abstract}
+In recent years, there are more and more recommendation systems merged as time goes on. It brought us a lot of convenience and improved the efficiency of finding resources by the development of technology. However, with the rapid growth of information, people feel hard to find the exact information they need in job searching sometimes. Thus, the birth of Job Recommendation satisfied the demand of finding exact job information as soon as possible and make this process more and more automatically. So, in this project, we will explore the system of Job recommendation to help people improve the efficiency in finding job information.
+\LaTeX\
+\end{abstract}
+
+\keywords{Big Data, Job Recommendation Systems, Collaborative filtering, python, HID101, HID230}
+
+
+\maketitle
+
+\section{Introduction}
+
+As we browse the internet nowadays, we realized that many websites push side advertisements that are related to what we have just browsed seconds ago. We were wondering how the internet has gotten so smart, yet it was a trick that many technology companies have made use of to better sort through the data they have about users and to generate profits more efficiently. These companies use data to filter out things that users like to read, which enhance users' browsing experience and therefore, use the website more often. The so-called recommendation system has been more and more popular and is now an integral part of many e-commerce sites such as Netflix, Amazon.com, Google, and etc. While these big commercial companies have been using the recommendation system for so long, we also want to analyze how some job websites can utilize this recommendation system to enhance user experience. 
+\par According to Wikipedia's definition, a recommendation system  is a subclass of the information filtering system that seeks to forecast and predict the "preference" or "rating" that users would give to an item. In terms of a job recommendation system, it is the criteria of  "interesting and useful" and "individualized" that separate the recommendation system from traditional search engine and information retrieval systems. It is more personalized for users that they could easily find the information they need without future clicks and research.
+\par the regards of job recommendation systems, we want the system to recommend related job ads to job seekers based on their click history and basic information that they inserted in into the website such as majors, work history, extracurricular activities, skill sets, and etc. In other words, a job recommendation system has no difference than an automated form of a job search agency that not only it will show you a list of jobs that might fit you based on your information, but it will also utilized the relative jobs that related users have gotten or interested in who share the similar backgrounds as you do. The system is well trained in upselling and cross selling, just like an integrated job search agency. The fact that the job recommendation system could recommend personalized content based on past experience and related users' information bring users back to the website and keep using it. 
+
+
+\section{Importance of Job Recommendation Systems}
+With the rapid development of the Internet in the world, people's lifestyle has undergone tremendous changes. In the past, people may need to look for employment information by reading newspapers and reading magazines. But nowadays, people's lifestyles are changed. They are more and more inseparable from the Internet, and more and more work information is directly put online. People start to search for jobs online as a more direct and convenient way. According to data from China Internet Network Information Center, as of 2014, the number of Internet users in China has reached 632 million. As a result, optimizing network information has become an increasingly important demand. Because, with the development of the network, the amount of information increased more rapidly. However, the ability of people to choose information can not keep up with the explosive growth of information, which leads to a huge conflict between information growth and information selection ability of people. consequently, how to make this process more efficient by designing a system is become more and more important.On the other hand, the rapid development of the Internet brings us into a new era of big data. On the Internet, there are more and more different types of jobs, different types of requirements. Job seekers often spend a lot of time to search and browse jobs information, however, they may still will do something that is not their ideal position. Therefore, how to help job seekers intelligently to find the information they want in a short time has significant meaning at the time.
+
+
+\section{Recommendation Techniques}
+According to Resnick, P. and Varian, H.'s ‘Recommender Systems’. Communications of the ACM, they mentioned that recommendation techniques have many possible classifications. It is not about the types of interfaces and the properties of users' interaction with the job recommendation systems, but it is more about the sources of data that the system is based on and also the use to which the data is put. More specifically, a job recommendation system need to contain (i) background data, the information which the
+system retains before the job recommendation process starts, (ii) input data, the information which user must communicate to the system in order to generate a recommendation, for example,majors, work history, extracurricular activities, skill sets, and etc, and (iii) an algorithm that combines input and background data to arrive at its suggestions.
+
+
+\section{Definition of Important Terms}
+Collaborative systems often deploy a nearest neighbor method or a item-based collaborative filtering system – a simple system that makes recommendations based on simple regression or a weighted-sum approach. The end goal of collaborative systems is to make recommendations based on customers’ behavior, purchasing patterns, and preferences, as well as product attributes, price ranges, and product categories. Content-based systems can deploy methods as simple as averaging, or they can deploy advanced machine learning approaches in the form of Naive Bayes classifiers,  clustering algorithms or artificial neural nets.
+
+\subsection{Collaborative filtering algorithms}
+In order to understand how a job recommendation system work, we need to understand different recommendation systems approaches in order to pick the one that fit our need the most. Collaborative filtering methods are based on a large section of collecting and analyzing information on users' activities, preferences and forecasting what job seekers will like based on similar job seekers who share similar background. One of an important advantages of the collaborative filtering approach is that it does not rely on machine analyzable content and therefore, it is capable of accurately recommending complex items such as a data science job without requiring and "understanding" of the job itself. Many algorithms are used in measuring item similarity and user similarity in recommendation systems. 
+\par Collaborative filtering algorithms are based on the assumptions that most of the people who agreed in the past will later agree in the future, and that they will tend to like similar types of items as they liked in the past.
+\par When we are building a model from users' behaviors, we need to make a distinction between implicit and explicit forms of data collection.
+
+\par Examples of the collection of implicit data could be be the following:
+
+\begin{itemize}
+  \item Observing the jobs that users view in the past.
+  \item Analyzing job/user viewing times.
+  \item Keeping a record of the jobs that users apply online.
+  \item Obtaining a list of jobs that users have read to or researched on their computers.
+  \item Analyzing the users' social network and discovering similar likes and dislikes.
+\end{itemize}
+
+
+\par Examples of the collection of explicit data could be be the following:
+ 
+\begin{itemize}
+  \item Asking users to rate an job on a number scale.
+  \item Asking users to search.
+  \item Asking users to make a rank of a collection of jobs from favorite to least favorite.
+  \item Presenting two jobs to users and asking them to choose one of the better in between the two.
+  \item Asking  users to come up with a list of jobs that they like.
+\end{itemize}
+
+\par The job recommendation system will compare the implicit and explicit data to similar and dissimilar data collected from outside resources and calculates a list of recommended jobs for the users. 
+
+\par Collaborative filtering methods often have these three drawbacks which are cold start, sparsity, and scalability.
+
+\begin{itemize}
+  \item Cold start: These recommendation systems often require a great amount of pre-existing data on users in order to make some accurate recommendations. That means, if the data of one user is not comprehensive enough, there is a great possibility that the recommendation by the system does not align with the user's interest
+  \item Sparsity: The number of jobs posted on major job search sites is extremely large. The most involved and active users will only rate a small subset of the entire database. With that being said, even the most popular jobs will only have very few ratings.
+  \item Scalability: In many of the system environments in that these recommendation systems make recommendations, there are over millions of users and jobs, which means a large amount of computation power is definitely required and necessary to calculate all of the recommendations for all the users.
+
+\end{itemize}
+
+
+\section{How to Implement recommendation System}
+\begin{enumerate}
+  \item  User information acquisition and modeling: Because users have different interests and different industry differences, so we need to deal with the log files, dig out the user's explicit and implicit requirements, and then analyze and build the user mold.
+  \item Model Design and Implementation: At this stage, the main contents include the combination of feature variables, similarity calculation, positive and negative samples of mobile phones, weight value calculation and knowledge classification logistic regression.
+  \item System Design and Implementation: The user model and big data platform combine to meet the needs of the company's job recommendation system.
+  \item System verification and comparison: The group calculates the conversion rate off-line, determines the characteristic variable combination and the similar algorithm of the recommended model, and uses the filtering recommendation algorithm to compare and verify to get the optimal combination recommendation system.
+  \item The application and research of the system: It is necessary to establish the application framework of the recommendation system in other application fields, to study how to integrate with other business systems of the enterprise and to realize the diversification of the recommendation system.
+
+\end{enumerate}
+
+
+
+\section{Design System Model}
+As a kind of data mining, recommendation system is one of the more special data mining systems. He embodies the system and user interaction and real-time. Recommend interest-based objects to users based on their hobbies or browsing behaviors, and further correct and optimize the recommendation results based on the feedback results of user interaction. In this professional recommendation system, there are mainly three parts, data collection, offline data processing and real-time online recommendation.
+
+\subsection{Data collection}
+In the process of data collection. Because there are many ways for users to provide their preference information to the system, they can be divided into two kinds of explicit and implicit information. This information forms the basis of user behavior analysis. In this project, the main sources and channels of data are information about job-seekers registering, browsing jobs, and weblogging for job postings. User behavior categories: registration, browsing, residence time, job application. Their respective types of information are: explicit, implicit, implicit, implicit. The following is an explanation of the characteristics and actions of the four user behaviors.
+\par Registration: job seekers registered behavior, including the basic characteristics of job seekers, registration information we can get job preferences,
+Through job seekers' preferences, we can get more precise career preferences.
+\par Browse: job seekers on the job browsing information, through the frequency of the frequency of statistics, job seekers get the preference. This process can to some extent reflect their concern about job postings and the likelihood that they will be interested in positions. Thereby enhancing the accuracy of the analysis
+\par Dwell time: The user's dwell time information analysis, you can know whether the user is interested in the content of the visit and the degree of concern, so as to get their preference information. The longer you stay on a page, the more likely they are to be interested in the content of the page, as well as the level of attention. However, there are occasional noise data that is difficult to use based on this standard.
+\par Job Application: Boolean preferences, the value is 0 and 1. This information can be used to determine whether the user is interested in this position.
+
+
+
+\section{Conclusions}
+
+
+
+\section{Conclusions}
+ 
+
+
+
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{report} 
+
+\end{document}
