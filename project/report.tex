@@ -34,7 +34,7 @@ In recent years, there are more and more recommendation systems merged as time g
 \LaTeX\
 \end{abstract}
 
-\keywords{Big Data, Job Recommendation Systems, Collaborative filtering, python, HID101, HID230}
+\keywords{Big Data, Job Recommendation Systems, Collaborative filtering, content-based filtering, python, HID101, HID230}
 
 
 \maketitle
@@ -95,6 +95,43 @@ In order to understand how a job recommendation system work, we need to understa
 
 \end{itemize}
 
+\par Collaborative filtering approaches are classified as model based and memory-based collaborative filtering. A well-known example of memory-based approaches is user-based algorithm and that of model-based approaches is Kernel-Mapping Recommender.
+
+
+\subsection{Content-based filtering algorithms}
+Another popular approach that data scientists like to use to design job recommendation systems is content-based filtering. Content-based filtering approaches are based on profiles of the users’ preferences and a description of the job item. In a content-based recommendation system, keywords are implemented to describe the jobs and users' profiles are built to indicate the types of jobs these users like. To put in a different way, this algorithm tries to recommend jobs that are similar to those that users viewed and liked in the past. In particular, various potential jobs are put together to compare with jobs previously rated by the users and the best-matching jobs are recommended. This particular approach has its origins in information filtering research and information retrieval.
+
+\par To epurate the features of the jobs in the recommendation system, an job presentation algorithm would be applied. A widely popular used algorithm is the tf–idf representation.
+
+\par To create a user profile and save it in the database, the recommendation system mostly wants to focus on two kinds of information:
+\begin{enumerate}
+  \item A model of the users' preferences.
+  \item A history of the users' interactions with the recommendation system.
+\end{enumerate}
+
+\par Generally, these methods use an job profile characterizing the job within the recommendation system. The system will create content-based profiles of users based on the item features. There might be different weights to every item in terms of users' preference. The weights that are assigned to each of the features depending on the users' preference can be computed and calculated from individually rated content using a series of techniques. Simple approach uses the average rates of the item vector while other sophisticated approaches use machine learning techniques such as cluster analysis, Bayesian Classifiers, artificial neural networks and decision trees to calculate or estimate the potential probability that the users are going to like the job.
+
+\par The feedback the system got directly from a user, usually in the form of a like or dislike button, can be used to allocate lower or higher weights on the importance of specific attributes.
+
+\par An significant drawback with content-based filtering is that whether the recommendation system is actually capable to learn user preferences from users' historical actions regarding content sources and use the sources across all the other content types. When the recommendation system is limited to recommending jobs of the same types that the user is currently using, the retrieved value from the system is significantly less than that when another content type from other retrieving services could be recommended. For instance, recommending current news articles based on historical browsing of news is definitely useful, but it would be more useful when products, music, videos, discussions and etc. from different retrieving services could be recommended based on the news browsing.
+
+\par A great example of content-based filtering approach being used in the real world is Pandora Radio. It plays music based on the user's initial feed to the recommendation system and deliver recommended music with similar characteristics. Besides that, most of the movie, music, and book recommendation systems are based on content-based filtering algorithm since this particular one works the best for personalization based on historical data.
+
+
+\subsection{Hybrid recommendation systems}
+Recent researches have demonstrated that hybrid approaches, combining both content-based filtering and collaborative filtering could be much more effective in many cases. Hybrid approaches could be implemented in the following ways: by adding collaborative-based approach to a content-based capabilities , or vice versa; by collaborative-based making and content-based predictions separately and later combining them; or by unifying both approaches into one integrated model. Recent studies empirically compare the performance of the hybrid recommendation systems with the pure collaborative and content-based methods and thus demonstrate that the hybrid approaches can provide much more accurate recommendations than the pure approaches. These approaches can also be used to overcome many of the common problems that happen in pure approach recommendation systems such as sparsity and the scalability problem.
+
+\par One of the examples of the use of hybrid recommendation systems is Netflix. Although many movie and music recommendation systems use pure content-based approaches, Netflix chooses the strong hybrid approach that makes recommendations by using collaborative filtering, comparing the searching and watching behaviors of similar users as well as by content-based filtering, offering shows and movies which share similar characteristics with content that users have highly rated.
+
+\par A variety numbers of techniques have been proposed as the fundamentals for recommendation systems: content-based, collaborative, demographic and knowledge-based techniques. Every single one of these techniques has some sort of drawbacks, such as the well-known scalability problem for collaborative approach and biased rating system for content-based systems. A hybrid recommendation system is one that integrates multiple techniques together in order to achieve some synergy between all of the approaches, minimizing the influences of those drawback from a specific method.
+
+\begin{itemize}
+  \item Content-based: The system generates recommendations from particularly two sources: the ratings that a user has given them and the features associated with products. Content-based recommendation system treats recommendations as user-specific classification problems and learns a classifier for the users' likes and dislikes based on item features, which in our case, the job features.
+  \item Collaborative: The system provides recommendations using exclusively information about the rating profiles from different users or jobs. Collaborative system locates similar users / jobs with rating histories similar to the incumbent user or job and generate recommendations using the neighborhood. The users based and the items based nearest neighbor algorithms can be integrated to deal with the cold start problem and thus, improve recommendation results.
+  \item Knowledge-based: A knowledge-based recommendation system suggests jobs based on inferences about users' preferences and needs. This knowledge will contain explicit functional information about how certain job features would meet user needs.
+  \item Demographic: A demographic recommendation system generates recommendations based on a demographic profile of the users. Recommended jobs can be retrieved for different demographic niches, combining the ratings of users in those niches.
+\end{itemize}
+
 
 \section{How to Implement recommendation System}
 \begin{enumerate}
@@ -119,10 +156,35 @@ Through job seekers' preferences, we can get more precise career preferences.
 \par Dwell time: The user's dwell time information analysis, you can know whether the user is interested in the content of the visit and the degree of concern, so as to get their preference information. The longer you stay on a page, the more likely they are to be interested in the content of the page, as well as the level of attention. However, there are occasional noise data that is difficult to use based on this standard.
 \par Job Application: Boolean preferences, the value is 0 and 1. This information can be used to determine whether the user is interested in this position.
 
+\subsection{Offline data processing}
+Generally, the historical data of job seekers will be very large. Therefore, if the system wants to analyze massive data online and recommend it in real time, it is unrealistic. Therefore, if offline processing of data can make the data processing more Efficient and easy to implement. When we have collected enough user behavior data, we can pre-process the data off-line, such as noise reduction, and then analyze the user's behavior log and train user profiles through recommendation strategies. Finally, offline calculation of the user's character data and get the initial recommendation seen, the next step, the recommended results provided to the online implementation of the recommended use.
+
+\subsection{Online real-time recommendation}
+The online real-time recommendation is to analyze the user's real-time behavior in a very short period of time and give the recommended result. Therefore, the online recommendation system and offline processing are two different processes and concepts. The online real-time recommendation can not process the user's historical behavior log and can not handle too complicated data. The online real-time recommendation usually deals with simple data, for example, querying the basic information of job seekers, job seekers applying, And then combine the result of the analysis with the user characteristic data that has been processed offline to get the final recommendation result to the job seekers through the multi-dimensional analysis of filtering, screening and recommendation ranking.
 
 
-\section{Conclusions}
+\section{Technical Model}
 
+\subsection{Similarity retrieval technology}
+Content similarity retrieval technology refers to comparing the text feature information in a resource with the text feature value of a user's interest, comparing the user's historical preference information with the content feature of a resource, and calculating the similarity , Filtered out to meet the user's search expectations. An example of content similarity retrieval technology. First, you need to model the content and attributes of your position, for example, by industry, function, job type, and place of employment. And then through the characteristics of each position data to find the similarity between positions. If the professions, functions, types of jobs and workplaces are the same, we can think of these two posts as similar.
+
+\subsection{Demographic Collaborative Recommender Technology}
+Demographic information can be viewed as a kind of user knowledge information that can be used to determine similar equivalence across networks, so that demographic information can be considered as a synergistic approach. Collaborative demographic recommendation process: First, establish a data model for job seekers. Then according to job seekers model to calculate the similarity between job seekers. Find job seekers with the highest degree of similarity. Finally, recommend jobs to current job candidates based on their preferences. As a result, demographic data can initiate a referral system even when job seekers do not have a feedback evaluation of the position.
+
+\subsection{Collaborative Filtering Recommendation Techniques}
+Collaborative Filtering Recommendation Techniques is a technique that is widely used to predict user interest preferences. Its basic principle is based on the user's preference for the object, found the relevance of the object or user, and then recommend based on these correlations. The recommendation of collaborative filtering consists of three components: they are, Item-based recommendation, user-based recommendation and model-based recommendation. In this project, we mainly study this work recommendation system based on the idea of collaborative recommendation. That is to say, we need to train the recommendation model based on the sample data of job seekers' preferences and then make predictions based on the real-time information of job seekers Calculate recommended.
+
+\subsection{Big data processing technology}
+In this professional recommendation system, we assume that the big data processing framework that we need to use is log acquisition system Flume, big data platform Hadoop, streaming computing framework Storm and message cache system Kafka.
+
+\par Below I will introduce these different frameworks.
+
+
+\subsubsection{Flume}
+Flume is a distributed, reliable, and highly available mass log collection, aggregation and delivery system. In this project, we anticipate that all the real-time input data needed will be realized through this technology platform. An Agent is the basic component of a Flume stream. An Agent contains Source, Channel, Sinks, and other components that use these components to pass an Event from one node to the next or for the final purpose. The data is finally encapsulated into an Event for transmission. The Source is used to accept an external source. For example, the Apache server delivers an Event to the source. The channel is used to temporarily store the Event. Sink then outputs the data. Other components can add pretreatment and classification capabilities.
+
+\subsubsection{Hadoop}
+At present, the large number of user data are obtained based on the site log records, job site for very large number of users, a simple single machine is difficult to complete offline data processing, so this project will be presumably we have introduced a distributed Framework to deal with, Hadoop is one of the most popular distributed framework today, which includes the distributed file system HDFS and distributed computing framework MapReduce and so on.
 
 
 \section{Conclusions}
