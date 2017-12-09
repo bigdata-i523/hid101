@@ -305,12 +305,35 @@ In this project, the user's occupation model, user interest in job hunting, job 
 
 
 \section{Performance Measures}
-After the implementation of the job recommendation system, evaluation is always necessary and important in evaluating and assessing the effectiveness of the recommendation algorithms that we implemented. The most commonly used evaluation metrics are the root mean squared error and mean squared error, the former having been used in the Netflix Prize, one of the key events that energized research in recommendation systems. Such information retrieval metrics as recall and precision or DCG are very useful to assess the quality of recommendation approaches. Recently, diversity, novelty, and coverage are also considered as important aspects in evaluation. However, many of the classic evaluation measures are highly criticized. Results of so-called offline evaluations often do not correlate with actually assessed user-satisfaction. T
+After the implementation of the job recommendation system, evaluation is always necessary and important in evaluating and assessing the effectiveness of the recommendation algorithms that we implemented. The most commonly used evaluation metrics are the root mean squared error and mean squared error, the former having been used in the Netflix Prize, one of the key events that energized research in recommendation systems. Such information retrieval metrics as recall and precision or DCG are very useful to assess the quality and performance of recommendation approaches. Recently, diversity, coverage, and novelty are also considered as important aspects in evaluating the recommendation systems. Results of so-called offline evaluations often do not correlate with actually assessed user-satisfaction.
 
+To evaluate recommendation systems, we can use the popular concept of precision-recall. We need to be familiar with this in terms of the idea and classification is very similar. 
 
+\begin{itemize}
+  \item Recall:
+    \begin{itemize}
+    \item 
+    What ratio of jobs that users like were actually recommended.
+
+    \item If a user likes 10 jobs and the recommendation decided to show 6 of them, then the recall is 0.6
+
+    \end{itemize}
+
+  \item Precision
+    \begin{itemize}
+    \item 
+    Out of all of the recommended jobs, how many does the user actually like?
+
+    \item If 10 items were recommended to the user out of which he or she liked 8 of them, then precision is 0.8
+
+    \end{itemize}
+
+\end{itemize}
+
+\par An ideal job recommendation system is the one that only recommends the jobs which a user likes. So in this case, precision=recall=1. This is an optimal recommendation, and we should try and get as close as possible.
 
 \section{Conclusions}
- In this paper we wrote, we used a comprehensive literature analysis of many fundamental elements, problems faced, and technical model related to the job recommendation systems. We also analyzed other popular recommendation systems that are widely used nowadays, and tried to implement the advantages of those systems into the job recommendation system. The job recommendation system technologies will accomplish significant success in broad ranges of applications and will be potentially a powerful searching and recommending techniques. Consequently, there is a great opportunity for applying these technologies in recruitment environment to improve the matching quality. This paper analyzed the e-recruiting process and the different aspects related to applying the recommendation systems in candidates/job matching problem. Additionally, in order to give a clear understanding for job recommendation problem, a case study of applying three measures for matching candidates with job position was presented. Finally, we plan as a continuation of this work to present a survey of job recommendation approaches that have been proposed to produce the best fit between jobs and candidates. We will introduce state of the art of job recommendation as well as, a comparative study for its approaches.
+ In this paper we wrote, we used a comprehensive literature analysis of many fundamental elements, problems faced, and technical model related to the job recommendation systems. We also analyzed other popular recommendation systems that are widely used nowadays, and tried to implement the advantages of those systems into the job recommendation system. The job recommendation system technologies will accomplish significant success in broad ranges of applications and will be potentially a powerful searching and recommending techniques. Consequently, there is a great opportunity for applying these technologies in recruitment environment to improve the matching quality. Additionally, in order to have readers understand job recommendation problem, we detailed a series of recommendation techniques, how to implement the job recommendation system, and performance measurement methods. Finally, we plan as a continuation of this work to present a designed algorithm of job recommendation approaches that have been proposed to produce the best fit with design order and technical model. 
 
 \begin{acks}
 
