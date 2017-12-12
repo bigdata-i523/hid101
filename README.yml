@@ -29,9 +29,11 @@ paper2:
 project:
     review: Dec 4 2017
     author:
-        - Huiyi Chen, Yuanming Huang
+        - Huiyi Chen
+        - Yuanming Huang
     hid:
-        - 101, 230
+        - 101
+        - 230
     title: TBD
     abstract: >
         We showcase tis and that and the other
