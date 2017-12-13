@@ -34,11 +34,11 @@ project:
     hid:
         - 101
         - 230
-    title: TBD
+    title: Big Data in Job Recommendation Systems
     abstract: >
         We showcase tis and that and the other
         and another line.
     url: https://github.com/bigdata-i523/101/project/
     type: project
     status: Dec 09 17 100%
-    chapter: TBD
+    chapter: LifeStyle
