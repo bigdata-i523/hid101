@@ -4,6 +4,7 @@ owner:
     name: Huiyi Chen
     url: https://github.com/bigdata-i523/hid101
 paper1:
+    exclude: True
     abstract: This paper showcases tis and that and the other
     author:
         - Huiyi Chen
