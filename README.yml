@@ -25,7 +25,6 @@ paper2:
         - 101
     status: not yet started
     title: TBD
-    type: report
     url: https://github.com/bigdata-i523/hid101/paper2/
 project:
     review: Dec 4 2017
