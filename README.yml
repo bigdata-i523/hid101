@@ -5,7 +5,7 @@ owner:
     url: https://github.com/bigdata-i523/hid101
 paper1:
     exclude: True
-    abstract: This paper showcases tis and that and the other
+    abstract: This paper provides an insight of how big data is related to standardized testing. \LaTeX\ It will also describe some applications of big data in standardized testing, and how they function.
     author:
         - Huiyi Chen
     chapter: Theory
@@ -17,7 +17,7 @@ paper1:
 paper2:
     exclude: True
     review: Nov 6 2017
-    abstract: This paper showcases tis and that and the other
+    abstract: This paper provides an insight of how big data has changed the world of financial services. It will identify some key challenges that businesses might face due to the blooming of big data \LaTeX\ It will also describe some applications of big data in financial services, how to approach to big data in finance in practice, and finally, how to get the right outcome.
     author:
         - Huiyi Chen
     chapter: TBD
@@ -36,8 +36,8 @@ project:
         - 230
     title: Big Data in Job Recommendation Systems
     abstract: >
-        We showcase tis and that and the other
-        and another line.
+        In recent years, there are more and more recommendation systems merged as time goes on. It brought us a lot of convenience and improved the efficiency of finding resources by the development of technology. However, with the rapid growth of information, people feel hard to find the exact information they need in job searching sometimes. Thus, the birth of Job Recommendation satisfied the demand of finding exact job information as soon as possible and make this process more and more automatically. So, in this project, we will explore the system of Job recommendation to help people improve the efficiency in finding job information.
+       
     url: https://github.com/bigdata-i523/101/project/
     type: project
     status: Dec 09 17 100%
