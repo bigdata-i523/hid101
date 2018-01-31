@@ -7,7 +7,7 @@ project:
     title: Big Data in Job Recommendation System
     abstract: In recent years, there are more and more recommendation systems merged as time goes on. It brought us a lot of convenience and improved the efficiency of finding resources by the development of technology. However, with the rapid growth of information, people feel hard to find the exact information they need in job searching sometimes. Thus, the birth of Job Recommendation satisfied the demand of finding exact job information as soon as possible and make this process more and more automatically. So, in this project, we will explore the system of Job recommendation to help people improve the efficiency in finding job information.
        
-    url: https://github.com/bigdata-i523/hid101/project/Big_Data_in_Job_Recommendation_Systems.pdf
+    url: https://github.com/bigdata-i523/hid101/blob/master/project/Big_Data_in_Job_Recommendation_Systems.pdf
     type: project
     status: Dec 07 17 100%
     chapter: TBD
